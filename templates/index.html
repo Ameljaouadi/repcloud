@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pneumonia Detection</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">      
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <a class="navbar-brand mr-sm-5" href="{{ url_for('about') }}">PneumoSCAN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-sm-5  ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Acceuil</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/base">C'est quoi la Pneumonie?</a>
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/about">A propos </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/ha">DataSet</a>
+              </li>
+             
+              
+           
+          </ul>
+          
+        </div>
+      </nav>
+    <div class="container">
+        <div id="content" style="margin-top:2em; text-align: center;">
+
+            <p class="text-center font-weight-bold">
+            PneumoSCAN est une application de prédiction de pneumonie en utilisant des radiographies
+             pulmonaires et des algorithmes avancés pour détecter les signes de la maladie.
+              Il suffit d'importer une image radiographique dans l'application, et elle fournira
+               une prédiction précise sur la présence éventuelle de pneumonie
+            </p>
+            <h2 class="text-center"></h2>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Ajouter l'image
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+</div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+    <div class="image-section text-center" style="display:none; margin-left: 26%; ">
+        <div class="img-preview  text-center">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div style="margin-right: 40%">
+            <button type="button" class="btn  btn-lg " id="btn-predict">Voir Résultat!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 class="text-center mt-3" id="result">
+        <span> </span>
+    </h3>
+
+</div>
+</div>
+</div>
+    </div>
+</body>
+
+   
+    <footer class="bg-dark text-center text-white fixed-bottom">
+        <!-- Grid container -->
+        
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2024 Copyright:
+          <a class="text-white" href="">PneumoSCAN</a>
+        </div>
+        <!-- Copyright -->
+      
+        <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script> 
+</footer>
+
+</html>
